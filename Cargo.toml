@@ -1,0 +1,11 @@
+[package]
+name = "cadenza"
+version = "0.1.0"
+authors = ["Fishykins <caspar.m.green@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+prima = { path = "/home/fishy/Projects/prima" }
+hound = "3.4.0"
