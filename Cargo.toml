@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 prima = { path = "/home/fishy/Projects/prima" }
 hound = "3.4.0"
+vek = "0.12.0"

@@ -1,4 +1,4 @@
-use crate::maths::{Frequency, PRIMES};
+use crate::maths::{PRIMES};
 use std::fmt::Display;
 
 // ? Look into "Regular Numbers"
@@ -77,12 +77,24 @@ macro_rules! limitTuning {
 }
 
 #[test]
-fn name() {
+fn major_third_test() {
     let major_third_up = limitTuning![1.,0.,-2.];
+    let major_third_up2 = limitTuning![0.,4.,-6.];
     println!("3rd = {}, ratio = {}", major_third_up, major_third_up.ratio());
-    let c = Frequency::new(256.);
+    println!("3rd = {}, ratio = {}", major_third_up2, major_third_up2.ratio());
+    let c = crate::maths::Frequency::new(256.);
     let e = c.apply_lts(major_third_up);
-    println!("c = {}, e = {}", c, e);
-    assert_eq!(e, Frequency::new(320.));
+    let e2 = c.apply_lts(major_third_up2);
+    println!("c = {}, e = {} & {}", c, e, e2);
+    assert_eq!(e, crate::maths::Frequency::new(320.));
+    assert_eq!(e2, crate::maths::Frequency::new(324.));
+}
 
+#[test]
+fn seven_limit_tuning() {
+    let interval = limitTuning![1., 0., 1.,0.,-2.];
+    println!("interval = {}, ratio = {}", interval, interval.ratio());
+    let c = crate::maths::Frequency::new(256.);
+    let e = c.apply_lts(interval);
+    println!("c = {}, interval = {}", c, e);
 }

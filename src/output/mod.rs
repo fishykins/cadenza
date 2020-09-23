@@ -1,3 +1,3 @@
 mod sampler;
 
-pub use sampler::Sampler;
+pub use sampler::{Sampler, Wave};
