@@ -1,6 +1,3 @@
-#[macro_use]
-pub mod intonation;
-pub mod harmony;
+pub mod pitch;
+pub mod temperament;
 pub mod maths;
-pub mod rhythm;
-pub mod output;
