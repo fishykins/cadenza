@@ -37,6 +37,18 @@ impl Circle {
     pub fn from_temperament(temperament: &dyn Temperament) -> Self {
         Self::new(temperament.tone_count())
     }
+
+    /// Returns the index of the given tone.
+    pub fn index(&self, tone: Tone) -> usize {
+        let copy = self.clone();
+
+        for (i, t) in copy.enumerate() {
+            if t == tone {
+                return i
+            }
+        }
+        panic!("the index {} cannot be reached, but this should be impossible!?", tone);
+    }
 }
 
 impl Iterator for Circle {
