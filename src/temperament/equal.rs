@@ -31,7 +31,7 @@ impl EqualTemperament {
     }
 
     fn ratio(&self, tone: Note) -> f32 {
-        2_f32.powf(tone as f32 / self.tone_count as f32)
+        (tone as f32 / self.tone_count as f32).exp2()
     }
 }
 
